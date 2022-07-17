@@ -1,28 +1,40 @@
-Package: BuildABiocWorkshop
-Title: Bioconductor or R Workshop Template and Github Actions
-Version: 2.0.0
+Package: TrendCatcher
+Title: TrendCatcher: A Versitile R package for analyse longitudinal
+        RNA-seq study
+Version: 1.0.0
 Authors@R: 
-    person(given = "Sean",
-           family = "Davis",
+    person(given = "Xinge",
+           family = "Wang",
            role = c("aut", "cre"),
-           email = "seandavi@gmail.com",
-           comment = c(ORCID = "0000-0002-8991-6458"))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
-License: MIT + file LICENSE
+           email = "xwang234@uic.edu")
+Description: Identify dynamic gene from longitudinal/time course RNA-seq dataset.
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.0
 Depends: 
-    Biobase
+     RColorBrewer,
+     plyr, 
+     gss, 
+     compiler, 
+     stringr, 
+     gridExtra,
+     ggplot2, 
+     ggnewscale,
+     enrichR, 
+     foreach,
+     circlize, 
+     doSNOW,
+     reshape2, 
+     pracma, 
+     nlme, 
+     MASS
 Suggests: 
     knitr,
     rmarkdown,
     pkgdown
-URL: https://seandavi.github.io/BuildABiocWorkshop/
-BugReports: https://github.com/seandavi/BuildABiocWorkshop/issues/new/choose
+URL: https://wangxinge.github.io/TrendCatcherWorkshopBioc2022/
+BugReports: https://github.com/wangxinge/TrendCatcherWorkshopBioc2022/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: ghcr.io/seandavi/buildabiocworkshop:latest
+DockerImage: ghcr.io/wangxinge/TrendCatcherWorkshopBioc2022:latest
