@@ -1,6 +1,10 @@
 ---
 title: "3.Time-Heatmap-GO"
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{3.Time-Heatmap-GO}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### 1. Load TrendCatcher R package.
@@ -38,6 +42,7 @@ names(time_heatmap)
 
 Print out TimeHeatmap from the time_heatmap list object. 
 ```{r, fig.width=9, fig.height=10}
+require("ComplexHeatmap")
 print(time_heatmap$time.heatmap)
 ```
 

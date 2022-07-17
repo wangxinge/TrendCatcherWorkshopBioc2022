@@ -39,21 +39,19 @@ By default is "BioPlanet_2019".}
 \item{term.width, }{an integer variable. The character length for each GO term. If one GO term is super long, we can wrap
 it into term.width of strings into multiple rows. By default if 80.}
 
+\item{OrgDb, }{org.Hs.eg.db, org.Mm.eg.db}
+
 \item{GO.enrich.p, }{an numeric variable. The GO enrichment p-value threshold. By default if 0.05.}
 
 \item{figure.title, }{a character variable. The main title of Time-Heatmap.}
 
-\item{id.ensembl, }{a logic variable. If using ensembl as the keytype. This must match the row name of master.table.
-By default is TRUE.}
+\item{save.tiff.path, }{file path}
 
-\item{ont, }{one of "BP", "MF", and "CC" subontologies, or "ALL" for all three. By default is "BP".}
+\item{tiff.res, }{resolution}
 
-\item{save.pdf.path, }{a character variable. If need to save the figure into PDF file. This must be an absolute
-file path. If not needed save as PDF file, set it to NA. By defualt iS NA.}
+\item{tiff.width, }{figure width}
 
-\item{pdf.width, }{a numeric variable. The width of PDF file. By default is 13.}
-
-\item{pdf.height, }{a numeric variable. The height of PDF file. By default is 15.}
+\item{tiff.height, }{figure height}
 }
 \value{
 A list object, including elements names merge.df and time.heatmap.

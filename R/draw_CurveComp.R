@@ -23,7 +23,7 @@ draw_CurveComp<-function(master.list.1, master.list.2, ht.1, pathway, group.1.na
   if(!pathway %in% GO.df$Description){stop("Selected pathway must be in the timeheatmap object!!!")}
   
   ###  Extract DDEGs from both master.list object
-  sub<-GO.df %>% filter(Description == pathway)
+  sub<-GO.df %>% dplyr::filter(Description == pathway)
   sub<-sub[1,]
   gene.arr.up<-as.character(str_split(sub$geneID_up, "/", simplify = T))
   gene.arr.down<-as.character(str_split(sub$geneID_down, "/", simplify = T))

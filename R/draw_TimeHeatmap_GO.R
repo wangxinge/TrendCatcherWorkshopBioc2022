@@ -19,10 +19,10 @@
 #' it into term.width of strings into multiple rows. By default if 80.
 #' @param GO.enrich.p, an numeric variable. The GO enrichment p-value threshold. By default if 0.05.
 #' @param figure.title, a character variable. The main title of Time-Heatmap.
-#' @param save.pdf.path, a character variable. If need to save the figure into PDF file. This must be an absolute
-#' file path. If not needed save as PDF file, set it to NA. By defualt iS NA.
-#' @param pdf.width, a numeric variable. The width of PDF file. By default is 15.
-#' @param pdf.height, a numeric variable. The height of PDF file. By default is 15.
+#' @param save.tiff.path, file path
+#' @param tiff.res, resolution
+#' @param tiff.width, figure width
+#' @param tiff.height, figure height
 #'
 #' @return A list object, including elements names merge.df and time.heatmap.
 #' time.heatmap is the ggplot object. merge.df includes all the GO enrichment result and activation/deactivation time.

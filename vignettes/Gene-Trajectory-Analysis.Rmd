@@ -1,6 +1,10 @@
 ---
 title: "2. Gene Trajectory Analysis"
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{2. Gene Trajectory Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### 1. Load TrendCatcher R package.
@@ -65,7 +69,8 @@ Use hierachical pie chart to visulaize gene trajectory master-pattern and sub-pa
 This is useful when comparing two or more projects. 
 
 ```{r, fig.height=7}
-draw_TrajClusterPie(master.list = master.list,inner.radius = 0.7, cex.out = 1, cex.in = 1, fig.title = "Hierarchical Pie Chart")
+#par(mar=c(1,1,1,1))
+#draw_TrajClusterPie(master.list = master.list,inner.radius = 0.7, cex.out = 1, cex.in = 1, fig.title = "Hierarchical Pie Chart")
 ```
 
 

@@ -1,4 +1,16 @@
 #' Subset TimeHeatmap
+#' @param time_heatmap, TimeHeatmap object
+#' @param sel.go, GO terms
+#' @param master.list, master.list object
+#' @param GO.perc.thres, 0
+#' @param nDDEG.thres, number of DDEGs, 0
+#' @param term.width, width
+#' @param figure.title, title
+#' @param save.tiff.path, path
+#' @param tiff.res, resolution
+#' @param tiff.width, width
+#' @param tiff.height, height
+#' @return draw a TimeHeatmap with selected GOs
 #' 
 #' @export
 #'
@@ -33,7 +45,7 @@ draw_TimeHeatmap_selGO<-function(time_heatmap, sel.go, master.list, GO.perc.thre
   end.t.arr<-paste0(t.arr[2:length(t.arr)],t.unit)
   col.name.order<-paste0(start.t.arr, "-", end.t.arr)
   GO.df<-time_heatmap$GO.df
-  GO.df<-GO.df %>% filter(Description %in% sel.go & nDDEG > nDDEG.thres & perc > GO.perc.thres)
+  GO.df<-GO.df %>% dplyr::filter(Description %in% sel.go & nDDEG > nDDEG.thres & perc > GO.perc.thres)
   ################# Prepare mat1 
   sub.GO.df<-GO.df[,c("Description", "t.name", "Avg_log2FC", "nDDEG", "n_background")]
   sub.GO.mat<-dcast(sub.GO.df, formula = Description~t.name, value.var = "Avg_log2FC")

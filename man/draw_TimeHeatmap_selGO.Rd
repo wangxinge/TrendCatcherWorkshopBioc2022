@@ -18,6 +18,32 @@ draw_TimeHeatmap_selGO(
   tiff.height = 1500
 )
 }
+\arguments{
+\item{time_heatmap, }{TimeHeatmap object}
+
+\item{sel.go, }{GO terms}
+
+\item{master.list, }{master.list object}
+
+\item{GO.perc.thres, }{0}
+
+\item{nDDEG.thres, }{number of DDEGs, 0}
+
+\item{term.width, }{width}
+
+\item{figure.title, }{title}
+
+\item{save.tiff.path, }{path}
+
+\item{tiff.res, }{resolution}
+
+\item{tiff.width, }{width}
+
+\item{tiff.height, }{height}
+}
+\value{
+draw a TimeHeatmap with selected GOs
+}
 \description{
 Subset TimeHeatmap
 }

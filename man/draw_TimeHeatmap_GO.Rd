@@ -47,12 +47,13 @@ it into term.width of strings into multiple rows. By default if 80.}
 
 \item{figure.title, }{a character variable. The main title of Time-Heatmap.}
 
-\item{save.pdf.path, }{a character variable. If need to save the figure into PDF file. This must be an absolute
-file path. If not needed save as PDF file, set it to NA. By defualt iS NA.}
+\item{save.tiff.path, }{file path}
 
-\item{pdf.width, }{a numeric variable. The width of PDF file. By default is 15.}
+\item{tiff.res, }{resolution}
 
-\item{pdf.height, }{a numeric variable. The height of PDF file. By default is 15.}
+\item{tiff.width, }{figure width}
+
+\item{tiff.height, }{figure height}
 }
 \value{
 A list object, including elements names merge.df and time.heatmap.

@@ -6,6 +6,14 @@
 \usage{
 curveFitting.new(perm.dat.1, points)
 }
+\arguments{
+\item{perm.dat.1, }{data to permutate}
+
+\item{points, }{array of time values}
+}
+\value{
+fitted count over time
+}
 \description{
 CurveFitting
 }

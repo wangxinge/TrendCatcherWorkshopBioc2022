@@ -6,6 +6,18 @@
 \usage{
 permutation.new(perm.dat, n.perm = 100, points, parall = FALSE)
 }
+\arguments{
+\item{perm.dat, }{permutate data}
+
+\item{n.perm, }{time to perm}
+
+\item{points, }{array of time values}
+
+\item{parall, }{run using multiple core}
+}
+\value{
+permutated data
+}
 \description{
 Permuation
 }

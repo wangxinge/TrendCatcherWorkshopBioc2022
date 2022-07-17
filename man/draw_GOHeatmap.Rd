@@ -20,6 +20,8 @@ draw_GOHeatmap(
 \arguments{
 \item{master.list, }{a list object. The output from run_TrendCatcher function, contains master.table element.}
 
+\item{time.window, }{a character. Must be one of the merge.df$t.name.}
+
 \item{go.terms, }{a character array. Must be an array of go terms from the merge.df$Description.}
 
 \item{merge.df, }{a dataframe. The output dataframe from output list of draw_TimeHeatmap_GO or draw_TimeHeatmap_enrichR. Use $merge.df to obtain it.}
@@ -28,17 +30,15 @@ draw_GOHeatmap(
 By default is 2, meaning for each gene, the current time window's expression level is 2-fold compared to previous
 break point's expression level.}
 
-\item{time.windown, }{a character. Must be one of the merge.df$t.name.}
+\item{figure.title, }{character}
 
-\item{id.ensembl, }{a logic variable. If using ensembl as the keytype. This must match the row name of master.table.
-By default is TRUE.}
+\item{save.tiff.path, }{by default is NA}
 
-\item{save.as.PDF, }{a character variable. If need to save the figure into PDF file. This must be an absolute
-file path. If not needed save as PDF file, set it to NA. By default iS NA.}
+\item{tiff.res, }{resolution}
 
-\item{pdf.width, }{a numeric variable. The width of PDF file. By default is 13.}
+\item{tiff.width, }{figure width}
 
-\item{pdf.height, }{a numeric variable. The height of PDF file. By default is 15.}
+\item{tiff.height, }{figure height}
 }
 \value{
 A list object, including elements names merge.df and time.heatmap.

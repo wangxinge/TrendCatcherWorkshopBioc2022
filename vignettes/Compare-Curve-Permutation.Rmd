@@ -1,8 +1,10 @@
 ---
 title: "4.Compare DDEGs from same biological pathway but two different groups"
-output:
-  html_document: default
-  pdf_document: default
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{4.Compare DDEGs from same biological pathway but two different groups}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### 1. Load TrendCatcher R package.

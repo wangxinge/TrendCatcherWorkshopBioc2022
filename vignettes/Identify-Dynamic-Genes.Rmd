@@ -1,6 +1,10 @@
 ---
 title: "1. Identify Dynamic Genes and Generate Master Table."
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{1. Identify Dynamic Genes and Generate Master Table.}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### 1. Load TrendCatcher R package.

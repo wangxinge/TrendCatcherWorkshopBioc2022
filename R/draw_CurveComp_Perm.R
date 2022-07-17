@@ -1,4 +1,15 @@
 #' Draw DDEGs trajectories from two master.list object and also show LOESS curve fitting with permuataon
+#' @param master.list.1, master.list object from group 1
+#' @param master.list.2, master.list object from group 2
+#' @param ht.1, TimeHeatmap object from group 1
+#' @param pathway, GO term
+#' @param group.1.name, characters, group 1 name
+#' @param group.2.name, characters, group 2 name
+#' @param n.perm, time to permutate
+#' @param parall, run using multiple core
+#' @param pvalue.threshold, 0.05
+#' @return plot significant curve area
+#' 
 #' @export
 #'
 #'
@@ -12,7 +23,7 @@ draw_CurveComp_Perm<-function(master.list.1, master.list.2, ht.1, pathway,
     pathway = "neutrophil activation" 
     group.1.name = "severe" 
     group.2.name = "moderate" 
-    n.perm = 10 
+    n.perm = 100
     parall = F 
     pvalue.threshold = 0.05
   }
@@ -23,7 +34,7 @@ draw_CurveComp_Perm<-function(master.list.1, master.list.2, ht.1, pathway,
   if(!pathway %in% GO.df$Description){stop("Selected pathway must be in the timeheatmap object!!!")}
   
   ###  Extract DDEGs from both master.list object
-  sub<-GO.df %>% filter(Description == pathway)
+  sub<-GO.df %>% dplyr::filter(Description == pathway)
   sub<-sub[1,]
   gene.arr.up<-as.character(str_split(sub$geneID_up, "/", simplify = T))
   gene.arr.down<-as.character(str_split(sub$geneID_down, "/", simplify = T))
@@ -59,8 +70,8 @@ draw_CurveComp_Perm<-function(master.list.1, master.list.2, ht.1, pathway,
   #df$Group<-factor(df$Group, levels = c(group.1.name, group.2.name))
   
   ## prepare dat
-  group.1<-df %>% filter(Group == group.1.name)
-  group.2<-df %>% filter(Group == group.2.name)
+  group.1<-df %>% dplyr::filter(Group == group.1.name)
+  group.2<-df %>% dplyr::filter(Group == group.2.name)
   mod.1 = loess(Count ~ Time, data = group.1)
   mod.2 = loess(Count ~ Time, data = group.2)
   est.1 = predict(mod.1, data.frame(Time = points), se = TRUE)
@@ -116,8 +127,8 @@ draw_CurveComp_Perm<-function(master.list.1, master.list.2, ht.1, pathway,
       cat("Special Case: generated permutation is out of range \n")
       assign(paste("Model", j, sep = "_"), NULL)
     } else{
-      group.1<-perm.dat.1 %>% filter(Group == 1)
-      group.2<-perm.dat.1 %>% filter(Group == 2)
+      group.1<-perm.dat.1 %>% dplyr::filter(Group == 1)
+      group.2<-perm.dat.1 %>% dplyr::filter(Group == 2)
       mod.1 = loess(Count ~ Time, data = group.1)
       mod.2 = loess(Count ~ Time, data = group.2)
       est.1 = predict(mod.1, data.frame(Time = points), se = TRUE)

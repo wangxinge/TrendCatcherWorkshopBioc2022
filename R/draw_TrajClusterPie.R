@@ -109,8 +109,8 @@ draw_TrajClusterPie<-function(master.list, fig.title = "", inner.radius = 0.7, c
   data.in<-aggregate(Perc~MasterPattern, data.out, sum)
   colnames(data.in)[2]<-"Share"
   data.out<-merge(data.in,data.out)
-  data.out<-data.out %>% group_by(MasterPattern, SubPattern) %>% arrange(desc(Share))
-  data.in<-data.in %>% arrange(desc(Share))
+  data.out<-data.out %>% dplyr::group_by(MasterPattern, SubPattern) %>% arrange(desc(Share))
+  data.in<-data.in %>% dplyr::arrange(desc(Share))
   data.out<-as.data.frame(data.out)
   data.in<-as.data.frame(data.in)
 

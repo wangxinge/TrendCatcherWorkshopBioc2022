@@ -15,8 +15,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Depends: 
      RColorBrewer,
-     plyr, 
-     gss, 
+     plyr,
+     dplyr,
+     gss,
      compiler, 
      stringr, 
      gridExtra,
@@ -29,7 +30,15 @@ Depends:
      reshape2, 
      pracma, 
      nlme, 
-     MASS
+     MASS,
+     sva, 
+     ComplexHeatmap, 
+     DESeq2, 
+     Rcpp, 
+     clusterProfiler, 
+     edgeR,
+     org.Hs.eg.db, 
+     org.Mm.eg.db
 Suggests: 
     knitr,
     rmarkdown,
@@ -38,3 +47,7 @@ URL: https://wangxinge.github.io/TrendCatcherWorkshopBioc2022/
 BugReports: https://github.com/wangxinge/TrendCatcherWorkshopBioc2022/issues/new/choose
 VignetteBuilder: knitr
 DockerImage: ghcr.io/wangxinge/TrendCatcherWorkshopBioc2022:latest
+Imports: 
+    biomaRt,
+    scales
+    
